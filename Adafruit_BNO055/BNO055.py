@@ -242,7 +242,7 @@ class BNO055(object):
                 import Adafruit_GPIO.I2C as I2C
                 i2c = I2C
             # Save a reference to the I2C device instance for later communication.
-            self._i2c_device = i2c.get_i2c_device(address, **kwargs)
+            self._i2c_device = i2c.get_i2c_device(address, busnum=2, **kwargs)
 
     def _serial_send(self, command, ack=True, max_attempts=5):
         # Send a serial command and automatically handle if it needs to be resent
